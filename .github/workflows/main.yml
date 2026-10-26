@@ -20,7 +20,9 @@ jobs:
           java-version: '17'
 
       - name: Set up Android SDK
+        android-actions/setup-android@v3
         uses: android-actions/setup-android@v3
+        timeout-minutes: 5
 
       - name: Build APK
         run: chmod +x gradlew && ./gradlew assembleDebug
